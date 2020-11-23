@@ -9,8 +9,21 @@
 	<link rel="stylesheet" href="../css/02.search.css">
 </head>
 <body>
-	<div id="app">
-		
+	<div id="app" class="container">
+		<div class="jumbotron my-3">
+			<h1>
+				{{title}}
+				<hr>
+				<small>{{subTitle}}</small>
+			</h1>
+		</div>
+		<form action="#" class="search-form">
+			<div class="form-inline form-wrap">
+				<strong>메뉴검색 : </strong>
+				<input type="text" class="form-control p-3 mx-3 input-menu" v-model="search">
+				<i class="fa fa-times-circle bt-search" v-show="search.length" v-on:click="onReset"></i>	
+			</div>
+		</form>
 	</div>
 	<script src="../js/vue.js" type="module"></script>
 	<script src="../js/02.search.js" type="module"></script>
