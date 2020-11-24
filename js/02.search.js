@@ -24,9 +24,13 @@ new Vue({
 	methods: {
 		onReset(e) {
 			this.search = '';
+			this.prds = [];
 		},
 		onSubmit(e) {
 			this.prds = products
+		},
+		onKeyUp(e) {
+			if(this.search.length == 0) this.onReset();
 		}
 	}
 });

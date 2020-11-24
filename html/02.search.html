@@ -20,16 +20,16 @@
 		<form action="#" class="search-form" v-on:submit.prevent="onSubmit">
 			<div class="form-wrap">
 				<strong>메뉴검색 : </strong>
-				<input type="text" class="form-control px-3 my-3 input-menu" v-model="search">
+				<input type="text" class="form-control px-3 my-3 input-menu" v-model="search" v-on:keyup="onKeyUp">
 				<i class="fa fa-times-circle bt-search" v-show="search.length" v-on:click="onReset"></i>	
 			</div>
 		</form>
 		<ul class="product-wrapper">
-			<li class="product">
+			<li class="product" v-for="v in prds" v-bind:key="v.id">
 				<div class="img-wrap">
-					<img class="w-100">
+					<img class="w-100" v-bind:src="v.src" v-bind:alt="v.name">
 				</div>
-				<div class="price-wrap"></div>
+				<div class="price-wrap">{{v.price}}</div>
 			</li>
 		</ul>
 	</div>
