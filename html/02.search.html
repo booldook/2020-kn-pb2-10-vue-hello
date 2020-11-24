@@ -17,17 +17,19 @@
 				<small>{{subTitle}}</small>
 			</h1>
 		</div>
-		<form action="#" class="search-form">
-			<div class="form-inline form-wrap">
+		<form action="#" class="search-form" v-on:submit.prevent="onSubmit">
+			<div class="form-wrap">
 				<strong>메뉴검색 : </strong>
-				<input type="text" class="form-control p-3 mx-3 input-menu" v-model="search">
+				<input type="text" class="form-control px-3 my-3 input-menu" v-model="search">
 				<i class="fa fa-times-circle bt-search" v-show="search.length" v-on:click="onReset"></i>	
 			</div>
 		</form>
-		<ul class="product-wrap">
+		<ul class="product-wrapper">
 			<li class="product">
-				<img src="../img/lx-0-0.jpg" alt="상품1" class="w-100">
-				<div></div>
+				<div class="img-wrap">
+					<img class="w-100">
+				</div>
+				<div class="price-wrap"></div>
 			</li>
 		</ul>
 	</div>

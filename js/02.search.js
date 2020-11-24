@@ -11,7 +11,7 @@ var products = [
 	{id: 10, name: 'Furniture 10', src: '../img/lx-9-0.jpg', price: '$15.00'},
 	{id: 11, name: 'Furniture 11', src: '../img/lx-10-0.jpg', price: '$22.00'},
 	{id: 12, name: 'Furniture 12', src: '../img/lx-11-0.jpg', price: '$12.99'}
-]
+];
 
 new Vue({
 	el: '#app',
@@ -22,8 +22,11 @@ new Vue({
 		prds: []
 	},
 	methods: {
-		onReset() {
+		onReset(e) {
 			this.search = '';
+		},
+		onSubmit(e) {
+			this.prds = products
 		}
 	}
 });
